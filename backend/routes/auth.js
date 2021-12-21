@@ -264,7 +264,7 @@ router.get('/admin/get-details/:id', isAuthenticated, authorizeRoles("admin"), a
         if(!user){
             res.status(400).json({
                 success: false,
-                message: `User doesn't exist with ${req.param.id} id`,
+                message: `User doesn't exist with ${req.params.id} id`,
             });
         }
 
@@ -282,6 +282,57 @@ router.get('/admin/get-details/:id', isAuthenticated, authorizeRoles("admin"), a
     }
 });
 
+
+router.put('/admin/update-role/:id', isAuthenticated, authorizeRoles("admin"), async (req, res)=>{
+    try {
+        const { role } = req.body;
+
+        const user = await User.findByIdAndUpdate(req.params.id, { role }, { new: true, runValidators: true });
+        if(!user){
+            res.status(400).json({
+                success: false,
+                message: `User doesn't exist with ${req.params.id} id`,
+            });
+        };
+
+        res.status(200).json({
+            success: true,
+            message: "Role Updated Successfully",
+        });
+    } catch (error) {
+        if (!res.headersSent) {
+            res.status(500).json({
+                success: false,
+                message: error.message,
+            })
+        };
+    }
+});
+
+
+router.delete('/admin/delete-user/:id', isAuthenticated, authorizeRoles("admin"), async (req, res)=>{
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        if(!user){
+            res.status(400).json({
+                success: false,
+                message: `User doesn't exist with ${req.params.id} id`,
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "User Deleted Successfully",
+        });
+    } catch (error) {
+        if (!res.headersSent) {
+            res.status(500).json({
+                success: false,
+                message: error.message,
+            })
+        };
+    }
+});
 
 
 module.exports = router;

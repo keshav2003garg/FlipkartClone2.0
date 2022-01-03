@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+const cloudinary = require('cloudinary');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const sentjwt = require('../utils/sendjwt');
@@ -14,6 +15,13 @@ router.post('/register', async (req, res) => {
     try {
         const { name, email, password, avatar } = req.body;
 
+        const myCloud = await cloudinary.v2.uploader.upload(avatar, {
+            folder: "avatars",
+            width: 150,
+            crop: "scale"
+        })
+        const avatarUrl = {public_id: myCloud.public_id, url: myCloud.secure_url};
+
         const salt = await bcrypt.genSalt(10);
         const securedPassword = await bcrypt.hash(password, salt);
 
@@ -21,7 +29,7 @@ router.post('/register', async (req, res) => {
             name: name,
             email: email,
             password: securedPassword,
-            avatar: avatar,
+            avatar: avatarUrl,
         });
         sentjwt(res, user, "Registered Successfully", 201);
     } catch (error) {

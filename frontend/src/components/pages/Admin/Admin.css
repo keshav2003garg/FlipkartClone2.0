@@ -1,0 +1,332 @@
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+ion-icon{
+    color: white;
+    font-size: 1.75em;
+}
+.admin-container{
+    width: 100%;
+    position: relative;
+}
+    .admin-navigation{
+        width: 210px;
+        height: 100%;
+        background: #2874f0;
+        position: fixed;
+        border-left: 10px solid #2874f0;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .admin-active-nav{
+        width: 80px;
+    }
+        .admin-active-nav ul li:nth-child(1){
+            visibility: hidden;
+        }
+        .notActive ul li:nth-child(1){
+            visibility: visible;
+            animation: flip 0.4s linear 0s 1;
+        }
+        @keyframes flip {
+            from{transform: translateX(100px);}
+            to{transform: translateX(0px);}
+        }
+        .admin-navigation ul{
+            width: 100%;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+        }
+            .admin-navigation ul li{
+                width: 100%;
+                position: relative;
+                list-style: none;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+            .admin-navigation ul li:nth-child(1){
+                margin-bottom: 15px;
+                padding-left: 45px;
+                pointer-events: none;
+            }
+            .flipkart-logo{
+                width: 95px;
+            }
+            .active-logo{
+                visibility: visible;
+                position: absolute;
+                top: 25%;
+                left: -135%;
+            }
+                .active-logo img{
+                    width: 40px;
+                }
+            .admin-navigation ul li:hover{
+                background-color: #f1f3f6;
+            }
+                .admin-navigation ul li:hover a::before{
+                    content: '';
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    top: -50px;
+                    right: 0px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px 35px  0 10px #f1f3f6;
+                    pointer-events: none;
+                }
+                .admin-navigation ul li:hover a::after{
+                    content: '';
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    bottom: -50px;
+                    right: 0px;
+                    background-color: #2874f0;
+                    border-radius: 50%;
+                    box-shadow: 35px -35px  0 10px #f1f3f6;
+                    pointer-events: none;
+                }
+                .admin-navigation ul li a{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    color: white;
+                }
+                .admin-navigation ul li:hover a{
+                    color: #2874f0;
+                }
+                    .admin-navigation ul li a .icon{
+                        height: 60px;
+                        min-width: 60px;
+                        position: relative;
+                        display: block;
+                        line-height: 70px;
+                        text-align: center;
+                    }
+                        .admin-navigation ul li a .icon ion-icon{
+                            font-size: 1.5em;
+                        }
+                        .admin-navigation ul li:hover a .icon ion-icon{
+                            color: #2874f0;
+                        }
+                        .admin-navigation ul li a .title{
+                            padding: 0 10px;
+                            height: 60px;
+                            display: block;
+                            position: relative;
+                            line-height: 60px;
+                            text-align: start;
+                            white-space: nowrap;
+                            font-family: 'Ubuntu', sans-serif;
+                        }
+
+    .admin-main{
+        min-height: 100vh;
+        width: calc(100% - 210px);
+        position: absolute;
+        left: 210px;
+        transition: 0.5s;
+    }
+    .admin-active-main{
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+        .topbar{
+            padding: 0 10px;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+            .toggle{
+                display: flex;
+               cursor: pointer;
+            }
+                .toggle ion-icon{
+                    color: #2874f0;
+                }
+            .search{
+                margin: 0 10px;
+                width: 400px;
+            }
+                .search label{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    position: relative;
+                }
+                    .search label input{
+                        padding: 5px 20px;
+                        padding-left: 35px;
+                        width: 100%;
+                        height: 35px;
+                        outline: none;
+                        border: 1px solid black;
+                        border-radius: 40px;
+                        font-size: 17px;
+                    }
+                    .search label ion-icon{
+                        position: absolute;
+                        left: 1%;
+                        color: #2874f0;
+                        font-size: 1.5em;
+                        cursor: pointer;
+                    }
+            .user{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                cursor: pointer;
+                position: relative;
+            }
+                .user img{
+                    width: 40px;
+                    position: absolute;
+                    top: 0%;
+                    left: 0%;
+                }
+        .cardBox{
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px;
+        }
+            .admin-card:hover{
+                background-color: #2874f0;
+            }
+            .admin-card:hover .detailBx .numbers, .admin-card:hover .detailBx .cardName, .admin-card:hover .iconBx ion-icon{
+                color: white; 
+            }
+            .admin-card{
+                padding: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                background-color: #fff;
+                box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+                border-radius: 20px;
+            }  
+                .admin-card .detailBx .numbers{
+                    position: relative;
+                    font-size: 2.25em;
+                    font-weight: 500;
+                    color: #2874f0;
+                    font-family: 'Ubuntu', sans-serif;
+                } 
+                .admin-card .detailBx .cardName{
+                    margin-top: 5px;
+                    font-size: 1.1em;
+                    color: grey;
+                    font-family: 'Ubuntu', sans-serif;
+                }
+                .admin-card .iconBx ion-icon{
+                    font-size: 2.75em;
+                    color: #2874f0;
+                }
+        .detailsBox{
+            margin-top: 10px;
+            padding: 20px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 30px;
+            position: relative;
+        }
+            .detailsBox .recent-orders{
+                padding: 20px;
+                min-height: 500px;
+                display: grid;
+                background-color: #fff;
+                box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+                border-radius: 20px;
+                position: relative;
+            }
+                .card-header{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    background-color: #fff;
+                }
+                    .card-header h2{
+                        font-weight: 500;
+                        color: #2874f0;
+                        font-family: 'Ubuntu', sans-serif;
+                    }
+                    .card-header a{
+                        padding: 5px 10px;
+                        background-color: #2874f0;
+                        color: #fff;
+                        font-family: 'Ubuntu', sans-serif;
+                        border-radius: 10px;
+                    }
+                .recent-orders table{
+                    margin-top: 10px;
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                    .recent-orders table thead tr td{
+                        font-weight: 600;
+                    }
+                    .recent-orders table tr td{
+                        padding: 10px;
+                        font-family: 'Ubuntu', sans-serif;
+                    }
+                    .recent-orders table tr{
+                        color: black;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+                    .recent-orders table tr td:last-child{
+                        text-align: end;
+                    }
+                    .recent-orders table tbody tr:hover{
+                        background: #2874f0;
+                        color: white;
+                    }
+                    .status.delivered{
+                        padding: 2px 4px;
+                        background: #8de02c;
+                        color: white;
+                        font-family: 'Ubuntu', sans-serif;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    .status.pending{
+                        padding: 2px 4px;
+                        background: #f9ca3f;
+                        color: white;
+                        font-family: 'Ubuntu', sans-serif;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    .status.return{
+                        padding: 2px 4px;
+                        background: #f00;
+                        color: white;
+                        font-family: 'Ubuntu', sans-serif;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    .status.inprogress{
+                        padding: 2px 4px;
+                        background: #1795ce;
+                        color: white;
+                        font-family: 'Ubuntu', sans-serif;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }

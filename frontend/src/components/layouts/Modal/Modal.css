@@ -1,0 +1,117 @@
+.modal{
+    background: rgb(28 29 30 / 66%);
+    position: absolute;
+    top: 0%;
+    z-index: 2;
+}
+.modal-container{
+    width: 46%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+    .content-container{
+        width: 95%;
+        height: 100%;
+        display: flex;
+        overflow-y: auto;
+    }
+        .left{
+            padding: 40px 30px;
+            width: 40%;
+            background-color: #2874f0;
+            border-radius: 5px 0 0 5px;
+            background-image: url(/public/images/login-bg.png);
+            background-position: center 85%;
+            background-repeat: no-repeat
+        }
+            .left span{
+                font-size: 28px;
+                font-weight: 500;
+                color: white;
+            }
+            .left p{
+                margin-top: 16px;
+                font-size: 18px;
+                color: #dbdbdb;
+            }
+        .right{
+            padding: 56px 35px 16px;
+            width: 60%;
+            background-color: #fff;
+        }
+            .login-form{
+                margin-top: 50px;
+            }
+                .email{
+                    margin-bottom: 34px;
+                }
+                .email label{
+                    padding-bottom: 5px;
+                    color: #878787;
+                }
+                .password{
+                    margin-bottom: 34px;
+                    position: relative;
+                }
+                .password label{
+                    padding-bottom: 5px;
+                    color: #878787;
+                }
+                .forgot-password{
+                    color: #2874f0;
+                    font-weight: 500;
+                    font-size: 15px;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 25%;
+                    right: 0%;
+                }
+                .terms{
+                    color: #878787;
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+                .terms a{
+                    color: #2874f0;
+                }
+                .login{
+                    margin-top: 10px;
+                }
+                .login button{
+                    padding: 12px 20px;
+                    width: 100%;
+                    background-color: #fb641b;
+                    color: white;
+                    border: none;
+                    border-radius: 2px;
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            .or{
+                margin-top: 25px;
+                color: #878787;
+                text-align: center;
+            }
+            .signup{
+                margin-top: 25px;
+                text-align: center;
+            }
+            .signup a{
+                color: #2874f0;
+                font-size: 15px;
+                font-weight: 500;
+            }
+    .cross-btn button{
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 32px;
+        font-weight: 500;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 1;
+    }

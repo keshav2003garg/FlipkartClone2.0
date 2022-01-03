@@ -1,0 +1,46 @@
+.carousel{
+    margin: 20px 12px;
+}
+
+.next-icon-carousel{
+    padding: 35px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.prev-icon-carousel{
+    padding: 35px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.next-icon-carousel svg path{
+    transform: rotateZ(180deg);
+    transform-origin: center;
+    fill: black;
+}
+.prev-icon-carousel svg path{
+    fill: black;
+}
+.carousel-control-next{
+    justify-content: flex-end;
+    opacity: 1;
+}
+.carousel-control-prev{
+    justify-content: flex-start;
+    opacity: 1;
+}
+.carousel-control-next:hover{
+    opacity: 1;
+}
+.carousel-control-prev:hover{
+    opacity: 1;
+}
+
+a:hover{
+    color: initial;
+}

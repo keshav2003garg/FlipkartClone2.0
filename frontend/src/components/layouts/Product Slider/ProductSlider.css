@@ -1,0 +1,95 @@
+.slider{
+    margin: 20px 15px;
+    background-color: #fff;
+	border-radius: 5px;
+}
+	.slider-heading{
+		padding: 15px 20px;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+	}   
+		.slider-heading div{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.slider-heading div h2{
+			font-size: 22px;
+			font-weight: 500;
+		}
+		.view-btn{
+			padding: 8px 25px;
+			background-color: #2874f0;
+			box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+			color: #fff;
+			border-radius: 2px;
+		}
+    .slider-container{
+		display: flex;
+		background-color: #fff;
+		overflow-x: auto;
+		border-radius: 5px;
+	}
+	.slider-container::-webkit-scrollbar{
+		display: none;
+	}
+		.slider-card{
+			padding: 12px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+			.card-category{
+				margin-top: 5px;
+				font-size: 14px;
+				font-weight: 500;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				color: black;
+			}
+			.card-discount{
+				padding-top: 8px;
+				font-size: 14px;
+				color: #388e3c;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			.card-sub-category{
+				font-size: 14px;
+    			padding-top: 7px;
+				opacity: .6;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		.next-icon{
+			padding: 35px 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 32%;
+			left: 97%;
+			background-color: #fefefe;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.next-icon svg path{
+			transform: rotateZ(180deg);
+			transform-origin: center;
+			fill: black;
+		}
+		.prev-icon{
+			padding: 35px 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 32%;
+			left: 0%;
+			background-color: #fefefe;
+			border-radius: 3px;
+		}
+		.prev-icon svg path{
+			fill: black;
+		}
